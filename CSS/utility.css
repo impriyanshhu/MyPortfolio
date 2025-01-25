@@ -1,0 +1,124 @@
+.border {
+    border: 1px solid #484848;
+}
+
+
+/*  ----------- padding -----------  */
+
+.p1 {
+    padding: 5px;
+}
+
+.p2 {
+    padding: 10px;
+}
+
+.p3 {
+    padding: 15px;
+}
+
+.p4 {
+    padding: 20px;
+}
+
+
+/*  ---------- margin ----------  */
+
+.m1 {
+    margin: 5px;
+}
+
+.m2 {
+    margin: 10px;
+}
+
+.m3 {
+    margin: 15px;
+}
+
+.m4 {
+    margin: 20px;
+}
+
+.mb-4{
+    margin-bottom: 20px;
+}
+
+.mb-0{
+    margin-bottom: 0;
+}
+
+
+/*  ------------- Border Radius -----------  */
+
+.br {
+    border-radius: 5px;
+}
+
+
+/*  --------------- bold --------------------  */
+
+.bold {
+    font-weight: bold;
+}
+
+
+/*  -------------- text-center ------------  */
+
+
+.middle{
+    text-align: center;
+}
+
+
+
+/*  ---------------- FONT SIZE ------------    */
+
+.fs-1{
+    font-size: 18px;
+}
+
+.fs-2 {
+    font-size: 22px;
+}
+
+.fs-3{
+    font-size: 25px;
+}
+
+.fs-4{
+    font-size: 30px;
+}
+
+.heading{
+    font-size: 2rem;
+}
+
+.title {
+    font-size: 4rem;
+    color: var(--primary);
+}
+
+/*  ---------------- GAP ------------    */
+
+.gap-r {
+    display: flex;
+    gap: 20px;
+}
+
+.gap-col {
+    display: grid;
+    gap: 20px;
+}
+
+/*  ---------------- center ------------    */
+
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrap{
+    flex-wrap: wrap;
+}

@@ -1,0 +1,205 @@
+/*  -------------------- FOR LAPTOP --------------------     */
+
+@media only screen and (max-width: 1023px) {
+
+    .fs-1,
+    .fs-2 {
+        font-size: 16px;
+    }
+
+    .heading {
+        font-size: 20px;
+    }
+
+    .nav-list a {
+        font-size: 14px;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .img-fluid {
+        width: 200px;
+    }
+
+    .btn {
+        font-size: 13px;
+    }
+
+    .right img {
+        width: 200px;
+    }
+
+    .card-container {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        max-width: 200px;
+    }
+
+    .contact-box .text {
+        font-size: 14px;
+        margin-left: 10px;
+    }
+
+    .icon {
+        min-width: 30px;
+        height: 30px;
+        font-size: 15px;
+    }
+
+    .social-media .icon{
+        min-width: 27px;
+        height: 27px;
+    }
+
+    #contact .row {
+        gap: 0;
+    }
+
+
+}
+
+
+
+
+
+/*  -------------------- FOR TABLET --------------------     */
+
+@media only screen and (max-width: 769px) {
+
+    #burger,
+    #cancel {
+        display: block;
+    }
+
+    #burger {
+        position: fixed;
+        top: 5%;
+        left: 4.5%;
+    }
+
+    #navbar {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: -235px;
+        background: #033242;
+        width: 235px;
+        font-size: 14px;
+    }
+
+    #main {
+        width: 90%;
+        margin: auto;
+    }
+
+    .row {
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .flex-start {
+        justify-content: flex-start;
+    }
+
+    .about-detail {
+        font-size: 16px;
+        line-height: 26px;
+        max-width: 140px;
+    }
+
+    .about-detail-info {
+        font-size: 16px;
+    }
+
+    .card-container {
+        justify-content: space-evenly;
+    }
+
+    .card {
+        max-width: 142px;
+    }
+    
+    .footer-links ul{
+        gap: 25px;
+    }
+
+    footer .center{
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+
+    .copyright{
+        padding: 3px;
+        font-size: 8.5px;
+    }
+
+}
+
+/*  -------------------- FOR MOBILE --------------------     */
+
+@media only screen and (max-width: 426px) {
+
+    .fs-2 {
+        font-size: 14px;
+    }
+
+    #burger {
+        font-size: 18px;
+        left: 3.5%;
+    }
+
+    #home .row {
+        flex-direction: column-reverse;
+    }
+
+    .gap-col {
+        gap: 10px;
+    }
+
+    .about-detail {
+        font-size: 15px;
+        line-height: 26px;
+        max-width: 115px;
+    }
+
+    .about-detail-info::before {
+        margin-right: 10px;
+    }
+
+    .about-detail-info {
+        font-size: 14px;
+    }
+
+    .content>p {
+        font-size: 15px;
+    }
+
+    .card-container {
+        flex-wrap: wrap;
+        max-height: 90vh;
+        overflow-y: scroll;
+    }
+
+    .card {
+        max-width: 100px;
+    }
+
+    .contact-form{
+        padding: 20px;
+        width: 80%;
+    }
+
+    .footer-Info {
+        justify-content: space-between;
+    }
+
+    .footer-links ul{
+        gap: 18px;
+    }
+
+}
