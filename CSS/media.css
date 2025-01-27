@@ -90,6 +90,7 @@
         background: #033242;
         width: 235px;
         font-size: 14px;
+        min-height : 100vh;
     }
 
     #main {
