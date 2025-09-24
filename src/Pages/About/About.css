@@ -1,0 +1,12 @@
+.about {
+    background: linear-gradient(rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.80)), url(../../assets/about_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.about-detail-info::before {
+    content: ":";
+    margin-right: 21px;
+}
