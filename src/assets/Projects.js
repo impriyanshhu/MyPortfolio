@@ -1,13 +1,13 @@
-import todo from '../assets/todo.png'
+import tour from '../assets/tour.jpg'
 import self from '../assets/self.png'
 
 export const projects = [
     { 
-      title: "Todo App", 
-      description: "A simple todo app with dark/light mode using Reactjs.", 
-      image: todo,
-      liveLink: "https://my-todolistapp.vercel.app/",
-      codeLink: "https://github.com/impriyanshhu/TodoList"
+      title: "Safi Seaside Tours", 
+      description: "Guiding Unforgettable Journeys Across Nova Scotia.", 
+      image: tour,
+      liveLink: "https://safiseaside-tours.vercel.app/",
+      codeLink: "https://github.com/impriyanshhu/Tour-and-Travel"
     },
     { 
       title: "Self Game", 
