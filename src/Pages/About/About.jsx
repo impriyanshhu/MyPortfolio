@@ -1,10 +1,9 @@
 import React from 'react'
 import './About.css'
 import my_Photo from '../../assets/my_Photo.png'
-import Education from '../../Components/Education/Education'
-import Skills from '../../Components/Skills/Skills'
-import { AboutMe } from '../../assets/About'
-import Footer from '../../Components/Footer/Footer'
+import Education from '../../Components/Education/Education.jsx'
+import Skills from '../../Components/Skills/Skills.jsx'
+import { AboutMe } from '../../assets/About.js'
 import { motion } from 'framer-motion'
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -22,8 +21,8 @@ const About = () => {
   };
 
   return (
-    <div className='w-full h-screen relative'>
-      <div className='about scrollbar-hide px-[80px] m-auto max-md:py-[15%] max-md:px-4 py-[6%] overflow-scroll scroll-smooth max-h-max'>
+    <div className='w-full min-h-screen relative'>
+      <div className='about scrollbar-hide px-[80px] m-auto max-md:py-[15%] max-md:px-4 py-[6%] max-h-max'>
         
         <div className="flex flex-col items-center justify-center gap-8 sm:w-[75%] m-auto border-solid border-primary/10">
           
@@ -92,7 +91,6 @@ const About = () => {
         
       </div>
 
-      <Footer />
     </div>
   )
 }

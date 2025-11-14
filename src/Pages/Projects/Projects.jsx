@@ -1,48 +1,55 @@
-import React from 'react'
-import { motion } from 'motion/react'
-import { projects } from '../../assets/Projects'
-import Footer from '../../Components/Footer/Footer'
+import React from "react";
+import { motion } from "motion/react";
+import { projects } from "../../assets/Projects";
+import './Projects.css'
 
 const Projects = () => {
   return (
-    <div className="projects pt-[6%]">
-      <motion.h2
-        initial={{ scale: 0, opacity: 0 }}
-        whileInView={{ scale: 1, opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8, delay: 0.1 }}
-        className="font-Ovo text-primary text-6xl pb-14 text-center font-semibold"
-      >
-        Projects
-      </motion.h2>
+    <div className="project w-full min-h-screen pt-24 pb-16 px-6">
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 px-6 pb-[8%] place-items-center">
+      {/* Page Heading */}
+      <motion.h1
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="text-3xl sm:text-4xl font-semibold text-center mb-12 text-primary"
+      >
+        My Projects
+      </motion.h1>
+
+      {/* Projects Grid */}
+      <div className="w-full max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 place-items-center">
+
         {projects.map((project, index) => (
           <motion.div
             key={project.id || index}
-            className="relative w-60 h-auto sm:w-72 aspect-square rounded-xl overflow-hidden shadow-lg group"
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.15 }}
+            className="relative w-64 sm:w-72 aspect-square rounded-xl overflow-hidden shadow-lg group bg-black/40"
           >
+            {/* Project Image */}
             <img
               src={project.image}
               alt={project.title}
-              loading="lazy"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              loading="lazy"
             />
 
-            <div className="relative z-10 bg-gray-900/60 p-6 h-full w-full rounded-xl flex flex-col items-center justify-center text-center text-white transition-all duration-500 group-hover:bg-gray-900/85">
-              <h2 className="text-xl font-bold">{project.title}</h2>
-              <p className="mt-2 text-gray-200">{project.description}</p>
+            {/* Glass Layer */}
+            <div className="relative z-10 h-full w-full bg-black/60 group-hover:bg-black/75 transition-all duration-500 flex flex-col items-center justify-center p-4 text-center text-white">
+              <h2 className="text-lg sm:text-xl font-bold">{project.title}</h2>
+              <p className="mt-2 text-gray-200 text-sm">{project.description}</p>
 
+              {/* Buttons */}
               <div className="flex gap-4 mt-6 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
                 <a
                   href={project.liveLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 bg-blue-500 rounded-md hover:bg-blue-600 transition"
+                  className="px-4 py-2 bg-blue-500 rounded-md hover:bg-blue-600 transition text-sm"
                 >
                   Live
                 </a>
@@ -50,7 +57,7 @@ const Projects = () => {
                   href={project.codeLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 bg-green-500 rounded-md hover:bg-green-600 transition"
+                  className="px-4 py-2 bg-green-500 rounded-md hover:bg-green-600 transition text-sm"
                 >
                   Code
                 </a>
@@ -58,11 +65,10 @@ const Projects = () => {
             </div>
           </motion.div>
         ))}
+
       </div>
-
-      <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;

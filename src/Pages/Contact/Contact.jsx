@@ -114,7 +114,6 @@ const Contact = () => {
 
       <ToastContainer position="top-center" autoClose={3000} />
 
-      <Footer />
     </div>
   )
 }

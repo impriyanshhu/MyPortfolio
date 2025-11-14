@@ -1,7 +1,15 @@
+import mynotes from '../assets/mynotes.png'
 import tour from '../assets/tour.jpg'
 import self from '../assets/self.png'
 
 export const projects = [
+  { 
+      title: "MyNotes App", 
+      description: "A secure and modern MERN stack app to create, manage, and organize your notes effortlessly..", 
+      image: mynotes,
+      liveLink: "https://mynotesflow.vercel.app/",
+      codeLink: "https://github.com/impriyanshhu/MyNotes-App"
+    },
     { 
       title: "Safi Seaside Tours", 
       description: "Guiding Unforgettable Journeys Across Nova Scotia.", 
