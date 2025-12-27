@@ -1,4 +1,5 @@
 import mynotes from '../assets/mynotes.png'
+import newsweb from '../assets/newsweb.png'
 import tour from '../assets/tour.jpg'
 import self from '../assets/self.png'
 
@@ -11,6 +12,13 @@ export const projects = [
       codeLink: "https://github.com/impriyanshhu/MyNotes-App"
     },
     { 
+      title: "NewsWeb App", 
+      description: "A fast and responsive news web app built with ReactJS(Vite), using a News API to display and search real-time news.", 
+      image: newsweb,
+      liveLink: "https://newsweb-iksu.onrender.com/",
+      codeLink: "https://github.com/impriyanshhu/NewzWeb"
+    },
+    { 
       title: "Safi Seaside Tours", 
       description: "Guiding Unforgettable Journeys Across Nova Scotia.", 
       image: tour,
@@ -19,7 +27,7 @@ export const projects = [
     },
     { 
       title: "Self Game", 
-      description: "Check your relationship...", 
+      description: "Check your relationship... with yourself through this fun and interactive self-discovery game. Built using HTML, CSS, and JavaScript.", 
       image: self,
       liveLink: "https://selfbond.vercel.app/",
       codeLink: "https://github.com/impriyanshhu/MySelfFun"

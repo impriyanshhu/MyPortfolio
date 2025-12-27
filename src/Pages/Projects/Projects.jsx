@@ -7,7 +7,6 @@ const Projects = () => {
   return (
     <div className="project w-full min-h-screen pt-24 pb-16 px-6">
 
-      {/* Page Heading */}
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -18,7 +17,6 @@ const Projects = () => {
         My Projects
       </motion.h1>
 
-      {/* Projects Grid */}
       <div className="w-full max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 place-items-center">
 
         {projects.map((project, index) => (
@@ -30,20 +28,17 @@ const Projects = () => {
             transition={{ duration: 0.6, delay: index * 0.15 }}
             className="relative w-64 sm:w-72 aspect-square rounded-xl overflow-hidden shadow-lg group bg-black/40"
           >
-            {/* Project Image */}
             <img
               src={project.image}
               alt={project.title}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 bg-gray-200"
               loading="lazy"
             />
 
-            {/* Glass Layer */}
-            <div className="relative z-10 h-full w-full bg-black/60 group-hover:bg-black/75 transition-all duration-500 flex flex-col items-center justify-center p-4 text-center text-white">
+            <div className="relative z-10 h-full w-full bg-black/55 group-hover:bg-black/70 transition-all duration-500 flex flex-col items-center justify-center p-4 text-center text-white">
               <h2 className="text-lg sm:text-xl font-bold">{project.title}</h2>
-              <p className="mt-2 text-gray-200 text-sm">{project.description}</p>
+              <p className="mt-2 text-gray-100 text-sm">{project.description}</p>
 
-              {/* Buttons */}
               <div className="flex gap-4 mt-6 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
                 <a
                   href={project.liveLink}

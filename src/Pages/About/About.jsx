@@ -16,7 +16,6 @@ const About = () => {
     link.href = fileUrl;
     link.download = "PRIYANSHU.pdf";
     link.click();
-
     toast.success("CV downloaded successfully!");
   };
 
@@ -54,7 +53,7 @@ const About = () => {
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 1 }}
-              className='text-gray-400 text-base md:text-lg leading-8 pb-10'
+              className='text-gray-300 text-base md:text-lg leading-8 pb-10'
             >
               I’m a passionate and detail-oriented fresher Full-Stack MERN Developer with a strong foundation in MongoDB, Express.js, React, and Node.js. I love building clean,
               responsive, and user-friendly web applications, and I’m constantly exploring new

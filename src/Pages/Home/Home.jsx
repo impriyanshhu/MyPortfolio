@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 
 const Home = () => {
     return (
-        <div className="scrollbar-hide w-full h-screen bg-black bg-opacity-30 relative overflow-hidden">
+        <div className="scrollbar-hide w-full h-screen bg-black bg-opacity-10 relative overflow-hidden">
             <video
                 src={top_bg}
                 autoPlay
@@ -12,7 +12,7 @@ const Home = () => {
                 playsInline
                 className="w-full h-full object-cover absolute -z-50"
             />
-            <div className="absolute inset-0 bg-black bg-opacity-40 -z-40"></div>
+            <div className="absolute inset-0 bg-black bg-opacity-10 -z-40"></div>
 
             <div className="flex items-center justify-center w-full h-full">
                 <div className="text-center container lg:w-[60%] p-4">
