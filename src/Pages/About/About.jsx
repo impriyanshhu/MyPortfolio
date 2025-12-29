@@ -32,7 +32,7 @@ const About = () => {
             transition={{ duration: 1, delay: 0.1 }}
           >
             <div className="relative mx-auto bg-gradient-to-b from-primary/40 rounded-full w-48 h-48 md:w-64 md:h-64 overflow-hidden">
-              <img src={my_Photo} alt="Profile" className='object-cover' />
+              <img src={my_Photo} alt="Profile" className='object-cover w-full h-full' />
             </div>
           </motion.div>
 

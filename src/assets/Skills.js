@@ -8,6 +8,9 @@ import git from './git.png'
 import nextjs from './nextjs.png'
 import redux from './redux.png'
 import typescript from './TypeScript.png'
+import python from './python.png'
+import java from './java.png'
+import angular from './angular.png'
 
 export const skills = [
     {
@@ -60,7 +63,5 @@ export const skills = [
         title: "TypeScript",
         img: typescript
     },
-
-
-
+    
 ]
