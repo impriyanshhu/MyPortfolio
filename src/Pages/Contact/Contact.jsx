@@ -17,43 +17,55 @@ const Contact = () => {
   const handleMessage = (e) => setMessage(e.target.value);
 
   const sendEmail = async (e) => {
-    
     e.preventDefault();
+
     const toastId = toast.loading("Sending your message...");
 
-    const formData = new FormData(e.target);
-    formData.append("access_key", access_key);
+    try {
+      const formData = new FormData(e.target);
+      formData.append("access_key", access_key);
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData
-    });
-
-    const data = await response.json();
-
-    if (data.success) {
-      toast.update(toastId, {
-        render: "Form Submitted Successfully!",
-        type: "success",
-        isLoading: false,
-        autoClose: 3000,
-        closeOnClick: true
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
       });
-      setName('');
-      setEmail('');
-      setMessage('');
-    }
-    else {
-      console.log("Error", data);
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast.update(toastId, {
+          render: "Form Submitted Successfully!",
+          type: "success",
+          isLoading: false,
+          autoClose: 3000,
+          closeOnClick: true
+        });
+
+        setName('');
+        setEmail('');
+        setMessage('');
+      } else {
+        toast.update(toastId, {
+          render: `Error: ${data.message}`,
+          type: "error",
+          isLoading: false,
+          autoClose: 4000,
+          closeOnClick: true
+        });
+      }
+
+    } catch (error) {
+      console.error("Fetch Error:", error);
+
       toast.update(toastId, {
-        render: `Error: ${data.message}`,
+        render: "Something went wrong. Please try again later.",
         type: "error",
         isLoading: false,
         autoClose: 4000,
         closeOnClick: true
       });
     }
-  }
+  };
 
   return (
     <div className='contact relative min-h-screen'>
