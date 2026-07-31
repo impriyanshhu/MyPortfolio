@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from "react";
 import './About.css'
 import my_Photo from '../../assets/my_Photo.png'
 import Education from '../../Components/Education/Education.jsx'
@@ -10,21 +11,51 @@ import "react-toastify/dist/ReactToastify.css";
 
 const About = () => {
 
+  const [isDownloading, setIsDownloading] = useState(false);
+
   const handleDownload = () => {
-    const fileUrl = "/PRIYANSHU.pdf"; 
-    const link = document.createElement("a");
-    link.href = fileUrl;
-    link.download = "PRIYANSHU.pdf";
-    link.click();
-    toast.success("CV downloaded successfully!");
+    if (isDownloading) return;
+
+    setIsDownloading(true);
+
+    toast.promise(
+      fetch("/PRIYANSHU.pdf")
+        .then((res) => {
+          if (!res.ok) throw new Error();
+          return res.blob();
+        })
+        .then(
+          (blob) =>
+            new Promise((resolve) => {
+              setTimeout(() => {
+                const link = document.createElement("a");
+                link.href = URL.createObjectURL(blob);
+                link.download = "PRIYANSHU.pdf";
+                link.click();
+
+                setIsDownloading(false);
+                resolve();
+              }, 3000);
+            })
+        )
+        .catch((err) => {
+          setIsDownloading(false);
+          throw err;
+        }),
+      {
+        loading: "Downloading CV...",
+        success: "CV downloaded successfully!",
+        error: "Failed to download CV!",
+      }
+    );
   };
 
   return (
     <div className='w-full min-h-screen relative'>
       <div className='about scrollbar-hide px-[80px] m-auto max-md:py-[15%] max-md:px-4 py-[6%] max-h-max'>
-        
+
         <div className="flex flex-col items-center justify-center gap-8 sm:w-[75%] m-auto border-solid border-primary/10">
-          
+
           <motion.div
             initial={{ scale: 0, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
@@ -37,7 +68,7 @@ const About = () => {
           </motion.div>
 
           <div className='w-full'>
-            
+
             <motion.h2
               initial={{ y: -30, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
@@ -76,8 +107,8 @@ const About = () => {
               ))}
             </motion.div>
 
-            <button onClick={handleDownload} className='bg-primary/30 py-2 px-4 rounded-md text-base md:text-lg my-4 hover:bg-primary/50 transition'>
-              Download CV
+            <button onClick={handleDownload} disabled={isDownloading} className='bg-primary/30 py-2 px-4 rounded-md text-base md:text-lg my-4 hover:bg-primary/50 transition'>
+              {isDownloading ? "Downloading..." : "Download CV"}
             </button>
 
             <ToastContainer position="top-center" autoClose={2000} />
@@ -87,7 +118,7 @@ const About = () => {
 
         <Education />
         <Skills />
-        
+
       </div>
 
     </div>
